@@ -1,3 +1,9 @@
+# Version 0.11.0
+
+  * SVG rendering
+  * Use Leiningen for building
+  * Some tests in Clojure
+
 # Version 0.9
   * New shapes:
     * Ellipse {o}

@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.PathIterator;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Jean Lazarou.
@@ -108,7 +109,7 @@ public class SVGBuilder {
 
         ArrayList<DiagramShape> storageShapes = findSorageShapes(shapes);
 
-        storageShapes.sort(new Shape3DOrderingComparator());
+        Collections.sort(storageShapes, new Shape3DOrderingComparator());
 
         for (DiagramShape shape : storageShapes) {
 
@@ -140,7 +141,7 @@ public class SVGBuilder {
 
     private ArrayList<DiagramShape> findSorageShapes(ArrayList<DiagramShape> shapes) {
 
-        ArrayList<DiagramShape> storageShapes = new ArrayList<>();
+        ArrayList<DiagramShape> storageShapes = new ArrayList<DiagramShape>();
 
         for (DiagramShape shape : shapes) {
 
@@ -157,9 +158,9 @@ public class SVGBuilder {
     private void renderRestOfShapes() {
 
         ArrayList<DiagramShape> shapes = diagram.getAllDiagramShapes();
-        ArrayList<DiagramShape> pointMarkers = new ArrayList<>();
+        ArrayList<DiagramShape> pointMarkers = new ArrayList<DiagramShape>();
 
-        shapes.sort(new ShapeAreaComparator());
+        Collections.sort(shapes, new ShapeAreaComparator());
 
         for (DiagramShape shape : shapes) {
 

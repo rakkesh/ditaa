@@ -11,6 +11,7 @@
                  [org.apache.xmlgraphics/batik-codec "1.9"]
                  [org.apache.xmlgraphics/batik-bridge "1.9"]]
   :main org.stathissideris.ascii2image.core.CommandLineConverter
+  :javac-options ["-target" "1.6" "-source" "1.6" "-Xlint:-options"]
   :java-source-paths ["src/java"]
   :profiles {:dev {:dependencies      [[junit/junit "4.12"]]
                    :java-source-paths ["test/java"]}})
